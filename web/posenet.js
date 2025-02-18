@@ -72,6 +72,17 @@ function modelLoaded() {
 }
 
 // Una vez se carga el modelo POSENET, se carga la imagen recibida por la webcam
+
+///----------PRUEBA--17/02/2025------------------------------------
+// Configurar getUserMedia con una resolución específica
+navigator.mediaDevices.getUserMedia({
+  video: { width: 640, height: 480 }
+}).then(function (stream) {
+  video.srcObject = stream;
+  video.play();
+});
+///----------PRUEBA HASTA AQUI-----------------------------------------
+ 
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) { // En el caso de que reciba imagen a través de la webcam, lo muestra en la pantalla
     video.srcObject = stream;
