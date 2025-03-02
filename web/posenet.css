@@ -15,9 +15,11 @@
     width:100%;
   }
 
-  
+ 
   .container {
     position: relative;
+    width: 640px;  /* Ancho fijo */
+    height: 360px; /* Alto fijo */
     display: inline-block;
   }
   

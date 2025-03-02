@@ -76,12 +76,17 @@ function modelLoaded() {
 ///----------PRUEBA--17/02/2025------------------------------------
 // Configurar getUserMedia con una resolución específica
 navigator.mediaDevices.getUserMedia({
-  video: { width: 640, height: 480 }
+  video: {
+    width: { exact: 640 },  // Forzar un ancho de 640 píxeles
+    height: { exact: 480 }  // Forzar un alto de 480 píxeles
+  }
+  
 }).then(function (stream) {
   video.srcObject = stream;
   video.play();
 });
 ///----------PRUEBA HASTA AQUI-----------------------------------------
+
  
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) { // En el caso de que reciba imagen a través de la webcam, lo muestra en la pantalla
@@ -163,8 +168,10 @@ let metricsResults = [];
 // Representa el vídeo dentro del canvas para poder dibujar encima de él el esqueleto
 function drawCameraIntoCanvas() {
   // Asegurarse de que el tamaño del canvas coincida con el tamaño del video, por eso hemos comprobado antes las dimensiones del vídeo capturado por la webcam
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  
+  canvas.width = 640; //video.videoWidth; //***He forzado el cambio***** 24/02/2025
+  canvas.height = 480; //video.videoHeight;
+
 
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height); // Dibuja el vídeo en el canvas
   //console.log(poseHistory);

@@ -1,0 +1,92 @@
+
+/* EL SIGUIENTE MAIN CSS SE APLICARÁ LOS CAMBIOS QUE AÑADA PARA SOBREESCRIBIR EN EL CÓDIGO DE posenet.css */
+
+ /******AÑADO LO SIGUIENTE 21/02/25********/
+ .canvasContainer {
+  position: relative;
+  width: 640px;  /* Ancho fijo */
+  height: 480px; /* Alto fijo */
+  overflow: hidden; /* Evitar desbordamiento */
+} 
+#video {
+  display: none; /* Ocultar el video (solo se usa como fuente) */
+}
+#canvas {
+  width: 640px;  
+  height: 480px; /*Si pongo 480px Chrome no se distorsiona, pero Firefox si. En caso de poner 360 Firefox nno se distorsiona, pero Chrome si*/
+} 
+  /******FIN AÑADO LO SIGUIENTE********/
+
+  /******AÑADO LO SIGUIENTE 24/02/25***Para que salga un mensaje sólo en firefox(el mmensaje del index html)*****/
+.Firefox{
+  display: none;
+
+} 
+@-moz-document url-prefix() {
+  /* Estilos específicos para Firefox */
+  .Firefox {
+    display: block;
+  }
+}
+ /****** FIN AÑADO LO SIGUIENTE ********/
+
+/* .canvasContainer {
+  position: relative;
+  width: 640px;  /* Ancho fijo 
+  height: 480px; /* Alto fijo 
+  overflow: hidden; /* Evitar desbordamiento 
+}
+
+#video {
+  display: none; /* Ocultar el video (solo se usa como fuente) 
+}
+
+#canvas {
+  width: 100%;  /* Ocupar todo el ancho del contenedor
+  height: 100%; /* Ocupar todo el alto del contenedor 
+}
+* {
+  box-sizing: border-box;
+} */
+
+body {
+  font-family:sans-serif;
+  margin:0; padding:0;
+}
+
+div {
+  padding:10px;
+}
+
+#image img {
+  width:100%;
+}
+
+
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.coordinates-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+}
+
+.coordinate {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.part-name {
+  color: red;
+  margin-right: 5px;
+}
+
+.part-coordinate {
+  color: blue;
+}

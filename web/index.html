@@ -13,20 +13,34 @@ Sonidificación en tiempo real a través de tecnologías web*/-->
   <script src="https://unpkg.com/ml5@0.6.1/dist/ml5.min.js"></script>
   <!-- Asociamos al archivo HTML el archivo CSS -->
   <link rel="stylesheet" href="posenet.css" />
+  <link rel="stylesheet" href="main.css" /><!-- DEJAR MAIN.CSS PARA SOBREESCRIBIR MIS CAMBIOS-->
   <!-- Asociamos al archivo HTML el archivo JavaScript -->
   <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><!--Añadido 24/02/25 Resuleve el error de jquery que aparece en la consola F12-->
   <script src="https://cdn.jsdelivr.net/npm/osc/dist/osc-browser.min.js"></script>
 
 </head>
 
 <body>
   <div class="container">
-    <!-- Creamos el canvas en el cual reproduciremos el vídeo. Es necesario introducir el vídeo en el canvas para poder dibujar en él (posenet) -->
-    <canvas id="canvas" width="640" height="360"></canvas>
+   
+    <div class = "canvasContainer">
+      <!-- cambio 24/02/2025  para que aparezca en pantalla el siguiente aviso sólo en firefox(configurado en mainn css)-->
+      <div class ="Firefox"><!--24/02/25-->
+        Se recomienda el uso de un navegador Chrome o Safari para un óptimo funcionamiento
+      </div>
 
+      <!-- Creamos el canvas en el cual reproduciremos el vídeo. Es necesario introducir el vídeo en el canvas para poder dibujar en él (posenet)-->
+      <canvas id="canvas" width="640" height="360"></canvas> 
+
+    </div>
+   
+    
+    
+  
     <!-- Creamos el vídeo captado por la webcam, que posteriormente asociaremos al canvas -->
-    <video id="video" width="640" height="360" style="display: none" autoplay></video>
-
+    <video id="video" width="640" height="360" style="display: none" autoplay></video> 
+  
     <!-- Mensaje que aparece en la página web hasta que carga el vídeo de la webcam con POSENET incorporado -->
     <div id="message">Por favor, conceda los permisos necesarios para poder acceder a la webcam de su dispositivo...
     </div>
